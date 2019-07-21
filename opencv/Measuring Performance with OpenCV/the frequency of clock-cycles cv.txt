@@ -1,0 +1,17 @@
+import numpy as np
+import cv2
+#from matplotlib import pyplot as plt
+
+img = cv2.imread('C://Users//Md. Sheikh Farid//Downloads//farid1//messi.jpg',0)
+#plt.imshow(img, cmap = 'gray', interpolation = 'bicubic')
+#plt.xticks([]), plt.yticks([])
+
+#plt.show()
+
+e1 = cv2.getTickCount()
+for i in range(5,49,2):
+    img = cv2.medianBlur(img,i)
+e2 = cv2.getTickCount()
+t = (e2 - e1)/cv2.getTickFrequency()
+print (t)
+

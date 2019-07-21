@@ -1,0 +1,15 @@
+import cv2
+import numpy as np
+
+cap = cv2.VideoCapture('C://Users//Md. Sheikh Farid//Downloads//farid1//messi2.mp4')
+
+while True:
+    _, frame = cap.read()
+    edges = cv2. Canny (frame,100,200)
+    cv2.imshow('farid',edges)
+
+    k = cv2.waitKey(10) & 0xFF
+    if k == 30:
+      break
+cv2.destroyAllWindows()
+cap.release()

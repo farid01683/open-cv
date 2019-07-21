@@ -1,0 +1,28 @@
+import cv2
+import numpy as np
+
+
+cap = cv2.VideoCapture('C://Users//Md. Sheikh Farid//Downloads//farid1//messi2.mp4')
+
+while(1):
+
+    _, frame = cap.read()
+
+    hsv = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
+
+    lower_blue = np.array([110,50,50])
+    upper_blue = np.array([130,255,255])
+
+    farid = cv2.inRange(hsv, lower_blue, upper_blue)
+
+    farid2 = cv2.bitwise_and(frame,frame, mask= farid)
+
+
+    cv2.imshow('frame',frame)
+    cv2.imshow('farid',farid)
+    cv2.imshow('farid2',farid2)
+    k = cv2.waitKey(5) & 0xFF
+    if k == 27:
+        break
+
+cv2.destroyAllWindows()

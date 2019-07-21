@@ -1,0 +1,10 @@
+import numpy as np
+import cv2
+import numpy as np
+import cv2
+
+farid = np.zeros((512,512,3), np.uint8)
+cv2.circle(farid,(447,63), 63, (0,0,255), -1)
+cv2.imshow('farid',farid)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
